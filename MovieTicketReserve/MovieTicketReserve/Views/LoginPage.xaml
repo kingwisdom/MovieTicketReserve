@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:render="clr-namespace:MovieTicketReserve.Renderer"
+             x:Class="MovieTicketReserve.Views.LoginPage" NavigationPage.HasNavigationBar="False" BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Spacing="15">
+            <Label Text="SIGN IN" TextColor="White" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="Title" />
+            <!--<Image Source="login.png" Margin="0,40,0,0" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" /> -->
+            <Label Text="Let's Login Here" Margin="0,40,0,0" TextColor="#F38914" VerticalOptions="Start" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+           
+            <render:BorderlessEntry Placeholder="Your Email" Keyboard="Email" x:Name="Email" TextColor="White" PlaceholderColor="White" BackgroundColor="#263A4F" />
+
+            <BoxView HeightRequest="1" BackgroundColor="White" Margin="0,-15,0,0" />
+
+            <render:BorderlessEntry Placeholder="Your Password" IsPassword="True" x:Name="Passord" TextColor="White" PlaceholderColor="White" BackgroundColor="#263A4F" />
+
+            <BoxView HeightRequest="1" BackgroundColor="White" Margin="0,-15,0,0" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,40,0,0">
+                <Label Text="Don't have an account?" TextColor="White" />
+                <Label Text="REGISTER" TextDecorations="Underline" TextColor="#F38914">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="lblRegister" Tapped="lblRegister_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <Button  Margin="0,40,0,0" Text="Login" WidthRequest="300" CornerRadius="20" x:Name="loginBtn" TextColor="White" Clicked="Button_Clicked" Visual="Material">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#F38914" Offset="0.1" />
+                        <GradientStop Color="Red" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <ActivityIndicator Color="#F38914" IsRunning="False" IsVisible="False" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30" x:Name="activity" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

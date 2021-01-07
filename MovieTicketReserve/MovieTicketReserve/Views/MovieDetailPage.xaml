@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieTicketReserve.Views.MovieDetailPage" BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Grid RowDefinitions="1*,Auto" RowSpacing="0">
+                    <Image x:Name="ImgMovie" Aspect="Fill" HeightRequest="350"  />
+                    <BoxView BackgroundColor="Black" HeightRequest="350" Opacity="0.3" />
+                    <ImageButton BackgroundColor="Transparent" x:Name="ImgBack" Source="back.png" WidthRequest="25" HeightRequest="25" Margin="20,20,0,0" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" Clicked="ImgBack_Clicked" />
+                    <Image Source="play.png" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapVideo" Tapped="TapVideo_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                <Frame VerticalOptions="FillAndExpand" IsClippedToBounds="False" BackgroundColor="#263A4F" Margin="0,-40,0,0" CornerRadius="25" HasShadow="False">
+                    <StackLayout Margin="0,-50,0,0">
+                        <Grid HeightRequest="200" VerticalOptions="Start" ColumnDefinitions="4*,6*">
+                            <Frame Grid.Column="0" CornerRadius="15" Padding="0">
+                                <Image x:Name="ImageCover" Aspect="Fill" HeightRequest="200" VerticalOptions="Start" />
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="5" Spacing="5" Margin="10,40,0,0">
+                                <Label x:Name="LblMovieName" TextColor="White" FontSize="Medium"  />
+                                <Frame BackgroundColor="#8B93A6" BorderColor="#707070" Padding="8" CornerRadius="30">
+                                <Label TextColor="White" x:Name="LblGenre" />
+                                </Frame>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label x:Name="lblRating" TextColor="White" />
+                                    <Image Source="star.png" WidthRequest="20" HeightRequest="20" />
+                                </StackLayout>
+                                <Label x:Name="lblLanguage" TextColor="White"/>
+                                <Label x:Name="lblDuration" TextColor="White"/>
+                            </StackLayout>
+                        </Grid>
+                        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="0.65*,0.35*">
+                            <Label Text="Playing Date" TextColor="White" Grid.Row="0" Grid.Column="0" />
+                            <Label x:Name="lblPlayingDate" TextColor="#8B93A6" Grid.Row="1" Grid.Column="0" />
+                            <Label Text="Playing Time" TextColor="White" Grid.Row="0" Grid.Column="1" />
+                            <Label x:Name="LblPlayingTime" TextColor="#8B93A6" Grid.Row="1" Grid.Column="1" />
+                            
+                            <Label Text="Ticket Price" TextColor="White" Grid.Row="2" Grid.Column="0" />
+                            <Label x:Name="LblTicketPrice" TextColor="#8B93A6" Grid.Row="3" Grid.Column="0" />
+
+                        </Grid>
+                        <BoxView BackgroundColor="#8B93A6" HeightRequest="1" />
+                        <Label Text="Description" TextColor="White" />
+                        <Label x:Name="LblMovieDescription" TextColor="#8B93A6" />
+
+                        <Button Margin="0,30,0,0" Text="Book Now" TextColor="White" CornerRadius="20" Visual="Material" WidthRequest="300" Clicked="Button_Clicked">
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#F38914" Offset="0.1" />
+                                    <GradientStop Color="Red" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

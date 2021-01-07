@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieTicketReserve.Views.ContactPage" BackgroundColor="#263A4F">
+    <ContentPage.Content>
+        <StackLayout  Margin="15,20,15,0">
+            <Grid ColumnDefinitions="1.5*,7*,1.5*">
+                <ImageButton Source="back.png" HorizontalOptions="Start" Grid.Column="0" Aspect="AspectFit" BackgroundColor="Transparent" Clicked="ImageButton_Clicked" HeightRequest="30" WidthRequest="30" />
+                <Label Text="Contact Us" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" Grid.Column="1" />
+            </Grid>
+
+            <Label Text="For futher support you can call our  helpline using the option below" TextColor="White" />
+
+            <Button Margin="0,40,0,0" Text="CALL 08167927876" BackgroundColor="White" x:Name="call" TextColor="Black" CornerRadius="30" WidthRequest="300" HorizontalOptions="Center" Clicked="call_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
